@@ -7,7 +7,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@oneschema/react": "^0.5.3",
     "next": "^14.2.5",
+    "nuvo-react": "^2.12.2",
     "react": "^18",
     "react-dom": "^18"
   },
