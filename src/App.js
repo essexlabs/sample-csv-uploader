@@ -1,6 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { ColumnAPI, NuvoImporter } from "nuvo-react";
+import { NuvoImporter } from "nuvo-react";
 import OneSchemaImporter from "@oneschema/react";
 import { useState } from "react";
 function App() {
@@ -137,7 +136,7 @@ function App() {
       <div style={{ width: "50%" }}>
         <h1>Nuvo</h1>
         <NuvoImporter
-          licenseKey={"non-commercial"}
+          licenseKey='QxmpULuHeozipxTfAa77ROhkSG7QYqAVYnbHp7IUx1k='
           settings={{
             developerMode: true,
             identifier: "product_data",
