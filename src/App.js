@@ -194,6 +194,36 @@ function App() {
 
               return data;
             },
+            reviewStep: async (modifier, data, logs) => {
+              const newData = data;
+              for (const data of newData) {
+                if (data.account_number === 23000) {
+                  if (!data.account_number.info) {
+                    data.account_number = {
+                      "value": data.account_number,
+                      info: [
+                        {
+                          message: "Sample Warning: Possible Duplicate of stored data. Verify you want this data lil buddy",
+                          level: "warning"
+                        }
+                      ]
+                    }
+                  }
+                }
+                if (data.credit > 2000) {
+                  data.credit = {
+                    "value": data.credit,
+                    info: [
+                      {
+                        message: "Sample error: This number is way too big. Make it smaller jo sheesh",
+                        level: "error",
+                        suggestion: "2000"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
           }}
           onResults={(result, errors, complete) => {
             console.log("Errors: ", errors);
