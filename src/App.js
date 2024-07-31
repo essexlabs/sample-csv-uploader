@@ -86,11 +86,12 @@ function App() {
   ];
 
   const [isOpen, setIsOpen] = useState(false);
-  const onLaunched = () => {
-    console.log("Launched");
+  const onLaunched = (data) => {
+    console.log("Launched", data);
   };
   const onSuccess = (result) => {
     console.log("Success", result);
+    // need to call arnold with sheet_id and embed_id from the result data
   };
   const onCancel = () => {
     console.log("Cancelled");
@@ -112,9 +113,11 @@ function App() {
             /* required config values */
             clientId='434b0d9f-0368-47e8-8ecc-3006928aadaf'
             userJwt='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI0MzRiMGQ5Zi0wMzY4LTQ3ZTgtOGVjYy0zMDA2OTI4YWFkYWYiLCJ1c2VyX2lkIjoiPFVTRVJfSUQ-In0.t9MyW9-5PKnYituAgWBlaosMQA4bx7RfRINePH75i8k'
-            templateKey='cash_detail'
+            templateKey='vikings_check_disbursement'
             /* optional config values */
-            importConfig={{ type: "local" }}
+            importConfig={{
+              type: "local", metadataOnly: true,
+             }}
             devMode={true}
             className='oneschema-importer'
             style={{
